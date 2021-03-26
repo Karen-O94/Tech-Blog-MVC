@@ -1,22 +1,24 @@
-<div class="col-md-6 signup-form">
-    <div class="form-group mt-4 pt-1">
-        <h2 style="background-color: rgb(243, 234, 102); border-radius: 0.2rem; padding: 10px ">Signup</h2>
-        <div class="mb-3">
-            <label class="name-signup">Name: </label>
-            <input type="email" class="form-control" id="name-signup" placeholder="Name">
-        </div>
-        <div class="mb-3">
-            <label class="email-signup">Email: </label>
-            <input type="email" class="form-control" id="email-signup" placeholder="Email">
-        </div>
-        <div class="mb-3">
-            <label class="email-signup">Password: </label>
-            <input type="password" class="form-control" id="password-signup"></input>
-        </div>
-        <div class="mb-3">
-            <button type="submit" class="btn btn-outline-success ">signup</button>
-        </div>
-    </div>
+<div class="col-md-6">
+    <h2 style="background-color: rgb(243, 234, 102); border-radius: 0.2rem; padding: 10px ">Sign Up</h2>
+
+    <form class="form signup-form">
+      <div class="form-group mb-3">
+        <label for="name-signup">Name: </label><br>
+        <input class="form-input" type="text" id="name-signup" />
+      </div>
+      <div class="form-group mb-3">
+        <label for="email-signup">Email: </label><br>
+        <input class="form-input" type="text" id="email-signup" />
+      </div>
+      <div class="form-group mb-3 ">
+        <label for="password-signup">Password: </label><br>
+        <input class="form-input" type="password" id="password-signup" />
+      </div>
+      <div class="form-group mb-3">
+        <button class="btn btn-primary" type="submit">signup</button>
+      </div>
+    </form>
+  </div>
 </div>
 
 <script src="./js/signup.js"></script>
