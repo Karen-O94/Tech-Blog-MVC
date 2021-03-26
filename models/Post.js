@@ -13,11 +13,11 @@ Post.init(
         primaryKey: true,
         autoIncrement: true
       },
-      title: {
+      name: {
         type: DataTypes.STRING,
         allowNull: false
       },
-      post_content: {
+      description: {
         type: DataTypes.TEXT,
         allowNull: true
       },
@@ -41,3 +41,5 @@ Post.init(
       modelName: 'post'
     }
   );
+
+  module.exports = Post;
