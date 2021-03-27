@@ -1,4 +1,4 @@
-<div class="comments">
+{{!-- <div class="comments">
   {{#each this}}
     <p>
       {{user.name}} on {{format_date created_at}}
@@ -6,5 +6,18 @@
     <p class="text">
       {{comment_text}}
     </p>
+  {{/each}}
+</div> --}}
+{{!-- Loop through all the comments --}}
+<div class="comments">
+  {{#each comments as |comment|}}
+  <section class="comment">
+    <div class="meta">
+      {{user.name}} on {{format_date comment.date_created}}:
+    </div>
+    <div class="text">
+      "{{comment.comment_text}}"
+    </div>
+  </section>
   {{/each}}
 </div>
