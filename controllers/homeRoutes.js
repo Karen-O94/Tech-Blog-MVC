@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Post, User } = require('../models');
+const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, async (req, res) => {
@@ -8,19 +8,32 @@ router.get('/', withAuth, async (req, res) => {
     const postData = await Post.findAll({
       include: [
         {
+          model: Comment
+        },
+      ],
+      include: [
+        {
           model: User,
           attributes: ['name'],
         },
       ],
-    });
+    },
+      {
+        include: [
+          {
+            model: User,
+            attributes: ['name'],
+          },
+        ],
+      });
 
     // Serialize data so the template can read it
     const posts = postData.map((post) => post.get({ plain: true }));
 
     // Pass serialized data and session flag into template
-    res.render('homepage', { 
-      posts, 
-      logged_in: req.session.logged_in 
+    res.render('homepage', {
+      posts,
+      logged_in: req.session.logged_in
     });
   } catch (err) {
     console.log(err);
@@ -31,6 +44,19 @@ router.get('/', withAuth, async (req, res) => {
 router.get('/post/:id', async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
+      include: [
+        {
+          model: Comment
+        },
+      ],
+      include: [
+        {
+          model: User,
+          attributes: ['name'],
+        },
+      ],
+    },
+    {
       include: [
         {
           model: User,
@@ -75,7 +101,7 @@ router.get('/dashboard/edit/:id', async (req, res) => {
     const postData = await Post.findByPk(req.params.id);
 
     const post = postData.get({ plain: true });
-    
+
     res.render('edit', {
       ...post,
       logged_in: req.session.logged_in
@@ -98,7 +124,7 @@ router.get('/login', (req, res) => {
 router.get('/signup', (req, res) => {
   // Route to signup page
   if (req.session.logged_in) {
-    res.redirect('/profile');
+    res.redirect('/dashboard');
     return;
   }
 
@@ -111,12 +137,12 @@ router.put('/dashboard/edit/:id', withAuth, async (req, res) => {
       name: req.body.name,
       description: req.body.description
     },
-    {
-      where: {
-        id: req.params.id,
-        user_id: req.session.user_id,
-      },
-    });
+      {
+        where: {
+          id: req.params.id,
+          user_id: req.session.user_id,
+        },
+      });
 
     if (!postData) {
       res.status(404).json({ message: 'No blog found with this id!' });
