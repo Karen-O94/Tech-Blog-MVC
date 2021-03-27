@@ -71,11 +71,12 @@ router.get('/dashboard', withAuth, async (req, res) => {
 });
 
 router.get('/dashboard/edit/:id', async (req, res) => {
+  console.log(res)
   try {
     const postData = await Post.findByPk(req.params.id);
 
     const post = postData.get({ plain: true });
-
+    
     res.render('edit', {
       ...post,
       logged_in: req.session.logged_in
