@@ -17,18 +17,19 @@
 </div>
 <div class="row">
   <div class=" col-md-8 bg-secondary">
-    <p>Hello</p>
+    <p>Comments will appear below: </p>
     {{> comments comments}}
   </div>
 </div>
 
 <br>
-
+{{#if logged_in}}
 <form class="row comment-form">
   <div class="form-group p-2 col-md-8 bg-secondary">
     <textarea rows="3" cols="50" class="form-input" id="comment-text" name="comment-text"></textarea><br>
     <button type="submit" class="btn btn-dark">Add Comment</button>
   </div>
 </form>
+{{/if}}
 
 <script src="/js/comment.js"></script>
