@@ -5,9 +5,15 @@ A CMS-style blog site similar to a Wordpress site, where developers can publish 
 [Tech Blog]()
 
 ## Screenshots
-![image]()
 
-![image]()
+*Homepage*
+![image](https://user-images.githubusercontent.com/74797740/112738892-db11b280-8f5e-11eb-9b60-759d9052bffe.png)
+
+*Login Page*
+![image](https://user-images.githubusercontent.com/74797740/112738910-02687f80-8f5f-11eb-9d02-1a614b4e75eb.png)
+
+*Dashboard page with user logged in*
+![image](https://user-images.githubusercontent.com/74797740/112738924-317ef100-8f5f-11eb-8b81-1b568bb0006c.png)
 
 ## Technology
 * XAMPP / MySQL
@@ -43,8 +49,6 @@ Please see the example below of routes you will encounter with this app:
 * DELETE Blog Post by ID route- localhost:`${PORTnumber}`/post/`idNum`
 
 If all requests are successfully made, you will see the data populated in the Preview box and a status '200 OK'. A '404' or '400' status will show up if there is an error or bad request made
-
-![image](https://user-images.githubusercontent.com/74797740/111864983-2e32a680-895c-11eb-820e-ace2b95886ed.png)
 
 ## Test
 We do not have any test packages for this app but always check the error messages within terminals and debug using console.log(s). 
