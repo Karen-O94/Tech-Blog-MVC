@@ -61,6 +61,12 @@ We do not have any test packages for this app but always check the error message
 
 > [Learn more about this licence.](https://lbesson.mit-license.org/)
 
+## Credits
+
+Massive thanks to the following people for helping me with debugging:
+ - Homework club (you know who are!)
+ - AskBCS tutors - Manan & Kathryn (my life savers!)
+
 
 ## Questions?
 
