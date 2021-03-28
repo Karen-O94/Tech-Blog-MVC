@@ -2,7 +2,7 @@
 A CMS-style blog site similar to a Wordpress site, where developers can publish their blog posts and comment on other developers’ posts as well. 
 
 ## Link to deployed app
-[Tech Blog]()
+[Tech Blog](https://uob-tech-blog.herokuapp.com/)
 
 ## Screenshots
 
@@ -49,7 +49,7 @@ Please see the example below of routes you will encounter with this app:
 * UPDATE/PUT Blog Posts by ID route - localhost:`${PORTnumber}`/dashboard/edit/`idNum`
 * DELETE Blog Post by ID route- localhost:`${PORTnumber}`/post/`idNum`
 
-If all requests are successfully made, you will see the data populated in the Preview box and a status '200 OK'. A '404' or '400' status will show up if there is an error or bad request made
+If all requests are successfully made, you will see posts and comments added and a status '200 OK'. A '404' or '400' status will show up if there is an error or bad request made
 
 ## Test
 We do not have any test packages for this app but always check the error messages within terminals and debug using console.log(s). 
