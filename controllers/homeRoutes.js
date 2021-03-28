@@ -6,23 +6,25 @@ router.get('/', async (req, res) => {
   try {
     // Get all posts and JOIN with user data
     const postData = await Post.findAll({
-      include: [
-        {
-          model: Comment
-        },
-      ],
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-      ],
-    },
-      {
+    //   include: [
+    //     {
+    //       model: Comment
+    //     },
+    //   ],
+    //   include: [
+    //     {
+    //       model: User,
+    //       attributes: ['name'],
+    //     },
+    //   ],
+    // },
+    //   {
         include: [
           {
+            model: Comment
+          },
+          {
             model: User,
-            attributes: ['name'],
           },
         ],
       });
@@ -43,27 +45,19 @@ router.get('/', async (req, res) => {
 
 router.get('/post/:id', async (req, res) => {
   try {
-    const postData = await Post.findByPk(req.params.id, {
-      include: [
-        {
-          model: Comment
-        },
-      ],
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-      ],
-    },
-    {
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-      ],
-    });
+    const postData = await Post.findByPk(req.params.id,
+
+      {
+        include: [
+          {
+            model: Comment
+          },
+          {
+            model: User,
+            attributes: ['name'],
+          },
+        ],
+      });
 
     const post = postData.get({ plain: true });
     console.log(post)

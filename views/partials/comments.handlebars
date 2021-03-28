@@ -1,16 +1,5 @@
-{{!-- <div class="comments">
-  {{#each this}}
-    <p>
-      {{user.name}} on {{format_date created_at}}
-    </p>
-    <p class="text">
-      {{comment_text}}
-    </p>
-  {{/each}}
-</div> --}}
-{{!-- Loop through all the comments --}}
 <section class="comments">
-  {{#each this}}
+  {{#each this.comments}}
     <div class="text">
       {{this.user.name}} on {{format_date date_created}}:
     </div>
