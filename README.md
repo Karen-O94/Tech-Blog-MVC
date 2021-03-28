@@ -24,6 +24,7 @@ A CMS-style blog site similar to a Wordpress site, where developers can publish 
 
 ## Installation
 In order to use the ecommerce server, you will need to run `npm init -y` to initialise the `package.json ` and then install the following list of dependencies:
+
 `npm i mysql2`
 `npm i express`
 `npm i sequelize`
